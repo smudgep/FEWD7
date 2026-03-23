@@ -1,20 +1,21 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Blank
+      War Movies
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
-
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-  </div>
+  <!--Loop through each movie and display the ehader and poster-->
+  @for(movie of movies;track movie)
+  {
+  <ion-card>
+    <img alt="Movie Poster" src={{movie.Poster}} />
+    <ion-card-header>
+      <ion-card-title>{{movie.Title}}</ion-card-title>
+      <ion-card-subtitle>{{movie.year}}</ion-card-subtitle>
+  </ion-card-header>
+  </ion-card>
+  }
 </ion-content>
